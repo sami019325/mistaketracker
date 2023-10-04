@@ -1,0 +1,83 @@
+.btn-simple {
+    border: none;
+    background: none;
+}
+
+.btn-simple:active {
+    /* background: hsl(166, 26%, 57%); */
+    animation: btnsmp .3s;
+}
+
+@keyframes btnsmp {
+
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+.btn {
+    border: none;
+    background: none;
+}
+
+.btn-bg {
+    width: 73px;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #0B2149;
+}
+
+.color-main {
+    background-color: #14BF96;
+}
+
+.color-second {
+    background-color: #292929;
+}
+
+.color-text {
+    color: #292929;
+}
+
+.color-text-red {
+    color: #FD0F0F;
+}
+
+.height-60 {
+    height: 60px;
+}
+
+.item-ceter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inp {
+    width: 204px;
+    height: 40px;
+    flex-shrink: 0;
+    padding-left: 10px;
+    font-size: x-large;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.posiion-fixed {
+    position: fixed;
+}
+
+.text-wrap {
+    text-wrap: wrap;
+}
+
+.unselect {
+    user-select: none;
+}
+
+.w-full {
+    width: 100%;
+}

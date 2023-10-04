@@ -1,0 +1,67 @@
+let items = JSON.parse(localStorage.getItem('lastOfMistakeApp'));
+console.log(items)
+
+if (items === null) {
+    items = [
+        { id: 1, name: 'reading module', mistakes: 1 },
+        { id: 2, name: 'array and object', mistakes: 1 },
+    ]
+
+}
+
+
+
+
+const randerValue = () => {
+    console.log('show data')
+    console.log(items.length, ' items');
+    let text = "";
+    items.map((num) => {
+        console.log(num, 'num length')
+        text += "<div class='item-col'><button class='btn-simple unselect' id='" + num.id + "' onclick='runID(" + num.id + ")'><img src='./aboutbtn.svg' alt=' srcset=' /></button><h3 class='color-text'>" + num.name + "</h3><div class='item-ceter grid'><h3 class='color-text-red'>" + num.mistakes + "</h3><button class='tract-btn unselect item-ceter' ' onclick='increaseMstk(" + num.id + ")'><img src='./TrendUp.svg' alt=' srcset=' /></button></div></div>"
+        // text += text + ": " + num.name + "<br>";
+    });
+    document.getElementById("gg").innerHTML = text;
+
+}
+randerValue();
+
+
+const runID = (id) => {
+    console.log(id + "ddd")
+}
+const increaseMstk = (id) => {
+    console.log(id + " mistake count")
+}
+
+// items.forEach((num) => {
+// });
+
+// document.getElementById("").innerHTML = text;
+
+let IsmodalActive = false;
+
+const showHide = () => {
+    console.log('modal');
+    if (!IsmodalActive) {
+        document.getElementById('modal1').style.display = 'block';
+        IsmodalActive = true;
+    }
+    else {
+        document.getElementById('modal1').style.display = "none";
+        IsmodalActive = false;
+    }
+}
+
+const addItem = () => {
+    console.log('add items');
+    const mistakeName = document.getElementById("miskateNameField").value;
+    console.log("ss", mistakeName);
+    items.push({ id: items.length + 1, name: mistakeName, mistakes: 1 },)
+    setItemToLocal();
+    randerValue();
+}
+
+const setItemToLocal = () => {
+    localStorage.setItem("lastOfMistakeApp", JSON.stringify(items));
+}

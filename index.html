@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistake tracker</title>
+    <link rel="stylesheet" href="commo.css">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
+    <style>
+        body {
+            padding: 0;
+            border: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<!---------------------------------------------------------- Header part -->
+<div class="posiion-fixed w-full color-main height-60 text-center header-of-app">
+    <div class="item-ceter">
+        <img src="./logo.svg" alt="" srcset="">
+    </div>
+    <div class="item-ceter">
+        <input type="text" class="search-bar color-text" id="myInput" onkeyup="myFunction()"
+            placeholder="Search for mistake.." title="Type in a name">
+    </div>
+</div>
+<!---------------------------------------------------------- Header part -->
+<!---------------------------------------------------------- Items part -->
+<div id="gg" class="item-container">
+    <!-- <div class="item-col">
+        <button class="btn-simple unselect">
+            <img src="./aboutbtn.svg" alt="" srcset="">
+        </button>
+        <h3 class="color-text">dddddd dddd ddddd</h3>
+        <div class="item-ceter grid">
+            <h3 class="color-text-red">0000</h3>
+            <button class="tract-btn unselect item-ceter">
+                <img src="./TrendUp.svg" alt="" srcset="">
+            </button>
+        </div>
+    </div> -->
+</div>
+<!------------------------------------- nan bar -->
+<div class="nav-bar-container item-ceter">
+    <nav class="nav-bar item-ceter">
+        <button class="btn-simple item-ceter">
+            <img src="./addBtn.svg" alt="" srcset="" onclick="showHide()">
+        </button>
+        <button class="btn-simple item-ceter">
+            <img src="./Restart.svg" alt="" srcset="">
+        </button>
+    </nav>
+</div>
+<!------------------------------------- nan bar -->
+
+<!------------------------------------- nan bar -->
+<div id="modal1">
+    <div class="pop-up item-ceter">
+        <div class="pop-main">
+            <p>Name of the mistake:</p>
+            <input class="inp" id="miskateNameField" type="text" />
+            <p>Mistake count:</p>
+            <input class="inp text-center" type="number" value="1" max="9999" disabled />
+            <div class="pop-up-btn-container">
+                <button class="btn-bg item-ceter">
+                    <img src="./Trash Simple.png" alt="" srcset="">
+                </button>
+                <button class="btn-bg item-ceter" onclick="addItem(), showHide()">
+                    <img src="./Check.png" alt="" srcset="">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<body>
+
+
+    <script src="functionalities.js"></script>
+</body>
+
+</html>
