@@ -1,17 +1,19 @@
 let version = JSON.parse(localStorage.getItem('version'));
+let items = JSON.parse(localStorage.getItem('lastOfMistakeApp'));
+
 if (version === null) {
     localStorage.setItem("version", JSON.stringify("1"));
 }
 else if (parseInt(version) != 2) {
     alert("Not the updated one")
     localStorage.setItem("version", JSON.stringify("2"));
+    items = null;  //  very vulnerable ----------------------------- --------------------------------- ------ ----- ------ -------- --------- ---- ------- --------- ----------------------- ------    -     -- ------- ---    --------
 }
 
 
 
 
 
-let items = JSON.parse(localStorage.getItem('lastOfMistakeApp'));
 let heightMistakeLimiot = 0;
 let actualIDofRun = 0;
 console.log(items)
