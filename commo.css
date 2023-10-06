@@ -1,6 +1,7 @@
 .btn-simple {
     border: none;
     background: none;
+    width: 50px;
 }
 
 .btn-simple:active {
@@ -40,6 +41,14 @@
     color: #292929;
 }
 
+.color-white {
+    background: #FFFBFB;
+}
+
+.color-maked {
+    background: #facfcf;
+}
+
 .color-text-red {
     color: #FD0F0F;
 }
@@ -55,8 +64,9 @@
 }
 
 .inp {
-    width: 204px;
+    width: 90%;
     height: 40px;
+    border-radius: 5px;
     flex-shrink: 0;
     padding-left: 10px;
     font-size: x-large;
