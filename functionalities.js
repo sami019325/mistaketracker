@@ -7,7 +7,8 @@ if (version === null) {
 else if (parseInt(version) != 2) {
     alert("Not the updated one")
     localStorage.setItem("version", JSON.stringify("2"));
-    items = null;  //  very vulnerable ----------------------------- --------------------------------- ------ ----- ------ -------- --------- ---- ------- --------- ----------------------- ------    -     -- ------- ---    --------
+    localStorage.setItem("lastOfMistakeApp", JSON.stringify(null));
+    // items = null;  //  very vulnerable ----------------------------- --------------------------------- ------ ----- ------ -------- --------- ---- ------- --------- ----------------------- ------    -     -- ------- ---    --------
 }
 
 
