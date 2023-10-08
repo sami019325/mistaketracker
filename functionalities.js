@@ -4,7 +4,7 @@ let items = JSON.parse(localStorage.getItem('lastOfMistakeApp'));
 if (version === null) {
     localStorage.setItem("version", JSON.stringify("1"));
 }
-else if (parseInt(version) != 2) {
+else if (parseInt(version) != 3) {
     alert("Not the updated one")
     localStorage.setItem("version", JSON.stringify("2"));
     localStorage.setItem("lastOfMistakeApp", JSON.stringify(null));
