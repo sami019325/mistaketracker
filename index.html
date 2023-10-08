@@ -59,7 +59,8 @@
     <div class="pop-up item-ceter">
         <div class="pop-main">
             <p>Name of the mistake:</p>
-            <input class="inp" placeholder=" " id="miskateNameField" type="text" required />
+            <textarea class="inp" style="height:50px" placeholder=" " id="miskateNameField" type="text"
+                required></textarea>
             <p>Mistake count:</p>
             <input class="inp text-center" type="number" value="1" max="9999" disabled />
             <div class="pop-up-btn-container">
@@ -76,12 +77,13 @@
     <div class="pop-up item-ceter">
         <div class="pop-main">
             <p>Name of the mistake:</p>
-            <input class="inp" placeholder=" " id="M2miskateNameField" type="text" required />
+            <textarea class="inp" style="height:50px" placeholder=" " id="M2miskateNameField" type="text"
+                required></textarea>
             <p>Mistake count:</p>
             <input class="inp text-center" type="number" id="M2miskateCountField" value="1" max="9999" />
             <div class="pop-up-btn-container">
-                <button class="btn-bg item-ceter">
-                    <img src="./Trash Simple.png" alt="" srcset="">
+                <button class="btn-bg item-ceter" disabled style="opacity: .2;">
+                    <img src="./Trash Simple.png" alt="" srcset="" onclick="deletItem()">
                 </button>
                 <button class="btn-bg item-ceter" onclick="editFunction()">
                     <img src="./Check.png" alt="" srcset="">
