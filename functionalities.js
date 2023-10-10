@@ -1,18 +1,36 @@
 let version = JSON.parse(localStorage.getItem('version'));
 let items = JSON.parse(localStorage.getItem('lastOfMistakeApp'));
+let notifyUser = JSON.parse(localStorage.getItem('notifyDisplay'));
+console.log(notifyUser, '-----------------------------')
 
 if (version === null) {
-    localStorage.setItem("version", JSON.stringify("1"));
+    localStorage.setItem("version", JSON.stringify("3"));
+    localStorage.setItem("notifyDisplay", JSON.stringify("1"));
+    document.getElementById('notifyUser').style.display = 'block'
+
+    notifyUser = 1;
 }
-// else if (parseInt(version) != 2) {
-//     alert("Not the updated one")
-//     localStorage.setItem("version", JSON.stringify("2"));
-//     localStorage.setItem("lastOfMistakeApp", JSON.stringify(null));
-//     // items = null;  //  very vulnerable ----------------------------- --------------------------------- ------ ----- ------ -------- --------- ---- ------- --------- ----------------------- ------    -     -- ------- ---    --------
-// }
+else if (parseInt(version) != 3) {
+    alert("Not the updated one")
+    localStorage.setItem("version", JSON.stringify("3"));
+    localStorage.setItem("notifyDisplay", JSON.stringify("1"));
+    document.getElementById('notifyUser').style.display = 'block'
+
+    notifyUser = 1;
+}
 
 
+if (notifyUser <= 1) {
+    document.getElementById('notifyUser').style.display = 'block'
 
+}
+const notifyDisplay = () => {
+    console.log(notifyUser)
+    parseInt(notifyUser)
+    notifyUser += 1;
+    localStorage.setItem("notifyDisplay", JSON.stringify(notifyUser));
+    document.getElementById('notifyUser').style.display = 'none'
+}
 
 
 let heightMistakeLimiot = 0;

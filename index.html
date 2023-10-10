@@ -16,23 +16,42 @@
         }
     </style>
 </head>
-<!---------------------------------------------------------- Header part -->
-<div class="posiion-fixed w-full color-main height-60 text-center header-of-app">
-    <div class="item-ceter">
-        <img src="./logo.svg" alt="" srcset="">
+
+
+
+<body>
+    <!---------------------------------------------------------- Header part -->
+    <div class="posiion-fixed w-full color-main height-60 text-center header-of-app">
+        <div class="item-ceter">
+            <img src="./logo.svg" alt="" srcset="">
+        </div>
+        <div class="item-ceter">
+            <input type="text" class="search-bar color-text" id="searchText" placeholder="Search for mistake.."
+                title="Type in a name" oninput="myFunction()">
+        </div>
     </div>
-    <div class="item-ceter">
-        <input type="text" class="search-bar color-text" id="searchText" placeholder="Search for mistake.."
-            title="Type in a name" oninput="myFunction()">
+    <!---------------------------------------------------------- Header part -->
+    <!-- ----------------------------------- App notification panel -->
+    <div class="notifyUpdate" id="notifyUser">
+        <div class="notifyUpdate-inner">
+            <h2>
+                New here? watch the video and click done button after you are done.
+            </h2>
+            <iframe class="w-full" style="height: 400px"
+                src="https://www.youtube.com/embed/kcKPM1Vc9dU?si=lMUXpPjueEPQRe8K" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <div class="item-ceter top-50">
+                <button class="btn-bg text-white" onclick="notifyDisplay()">Done</button>
+            </div>
+            <i class="item-ceter top-20" id="notifyUserAlart">We will show this 1 more time, after clicking Done
+                button</i>
+        </div>
     </div>
-
-
-
-</div>
-<!---------------------------------------------------------- Header part -->
-<!---------------------------------------------------------- Items part -->
-<div id="gg" class="item-container">
-    <!-- <div class="item-col">
+    <!-- <!---------------------------------------------------------- Items part -->
+    <div id="gg" class="item-container">
+        <!-- <div class="item-col">
         <button class="btn-simple unselect">
             <img src="./aboutbtn.svg" alt="" srcset="">
         </button>
@@ -43,67 +62,62 @@
                 <img src="./TrendUp.svg" alt="" srcset="">
             </button>
         </div>
-    </div> -->
-</div>
-<!------------------------------------- nan bar -->
-<div class="nav-bar-container item-ceter">
-    <nav class="nav-bar item-ceter">
-        <button class="btn-simple item-ceter">
-            <img src="./addBtn.svg" class="btn-simple" alt="" srcset="" onclick="showHide('modal1')">
-        </button>
-        <button class="btn-simple item-ceter">
-            <img src="./Restart.svg" class="btn-simple" alt="" srcset="">
-        </button>
-    </nav>
-</div>
-<!------------------------------------- nan bar -->
+    <!--  -->
+    </div>
 
-<div id="modal1">
-    <div class="pop-up item-ceter">
-        <div class="pop-main">
-            <p>Name of the mistake:</p>
-            <textarea class="inp" style="height:50px" placeholder=" " id="miskateNameField" type="text"
-                required></textarea>
-            <p>Mistake count:</p>
-            <input class="inp text-center" type="number" value="1" max="9999" disabled />
-            <div class="pop-up-btn-container">
+    <!------------------------------------- nan bar -->
+    <div class="nav-bar-container item-ceter">
+        <nav class="nav-bar item-ceter">
+            <button class="btn-simple item-ceter">
+                <img src="./addBtn.svg" class="btn-simple" alt="" srcset="" onclick="showHide('modal1')">
+            </button>
+            <button class="btn-simple item-ceter">
+                <img src="./Restart.svg" class="btn-simple" alt="" srcset="">
+            </button>
+        </nav>
+    </div>
+    <!------------------------------------- nan bar -->
 
-                <button class="btn-bg item-ceter" onclick="inpCheckndActive()">
-                    <img src="./Check.png" alt="" srcset="">
-                </button>
+    <div id="modal1">
+        <div class="pop-up item-ceter">
+            <div class="pop-main">
+                <p>Name of the mistake:</p>
+                <textarea class="inp" style="height:50px" placeholder=" " id="miskateNameField" type="text"
+                    required></textarea>
+                <p>Mistake count:</p>
+                <input class="inp text-center" type="number" value="1" max="9999" disabled />
+                <div class="pop-up-btn-container">
+
+                    <button class="btn-bg item-ceter" onclick="inpCheckndActive()">
+                        <img src="./Check.png" alt="" srcset="">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!------------------------------------- nan bar -->
-<div id="modal2">
-    <div class="pop-up item-ceter">
-        <div class="pop-main">
-            <p>Name of the mistake:</p>
-            <textarea class="inp" style="height:50px" placeholder=" " id="M2miskateNameField" type="text"
-                required></textarea>
-            <p>Mistake count:</p>
-            <input class="inp text-center" type="number" id="M2miskateCountField" value="1" max="9999" />
-            <div class="pop-up-btn-container">
-                <button class="btn-bg item-ceter" disabled style="opacity: .2;">
-                    <img src="./Trash Simple.png" alt="" srcset="" onclick="deletItem()">
-                </button>
-                <button class="btn-bg item-ceter" onclick="editFunction()">
-                    <img src="./Check.png" alt="" srcset="">
-                </button>
+    <!------------------------------------- nan bar -->
+    <div id="modal2">
+        <div class="pop-up item-ceter">
+            <div class="pop-main">
+                <p>Name of the mistake:</p>
+                <textarea class="inp" style="height:50px" placeholder=" " id="M2miskateNameField" type="text"
+                    required></textarea>
+                <p>Mistake count:</p>
+                <input class="inp text-center" type="number" id="M2miskateCountField" value="1" max="9999" />
+                <div class="pop-up-btn-container">
+                    <button class="btn-bg item-ceter" disabled style="opacity: .2;">
+                        <img src="./Trash Simple.png" alt="" srcset="" onclick="deletItem()">
+                    </button>
+                    <button class="btn-bg item-ceter" onclick="editFunction()">
+                        <img src="./Check.png" alt="" srcset="">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<!------------------------------------- App notification panel -->
-<!-- <div class="notifyUpdate">
-    gg
-</div> -->
 
 
 
-<body>
 
 
     <script src="functionalities.js"></script>

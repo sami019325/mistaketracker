@@ -45,6 +45,8 @@
     background: #FFFBFB;
 }
 
+
+
 .color-maked {
     background: #facfcf;
 }
@@ -76,12 +78,24 @@
     text-align: center;
 }
 
+.text-white {
+    color: #FFFBFB;
+}
+
 .posiion-fixed {
     position: fixed;
 }
 
 .text-wrap {
     text-wrap: wrap;
+}
+
+.top-50 {
+    margin-top: 50px;
+}
+
+.top-20 {
+    margin-top: 20px;
 }
 
 .unselect {
