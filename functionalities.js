@@ -4,12 +4,12 @@ let items = JSON.parse(localStorage.getItem('lastOfMistakeApp'));
 if (version === null) {
     localStorage.setItem("version", JSON.stringify("1"));
 }
-else if (parseInt(version) != 3) {
-    alert("Not the updated one")
-    localStorage.setItem("version", JSON.stringify("3"));
-    localStorage.setItem("lastOfMistakeApp", JSON.stringify(null));
-    // items = null;  //  very vulnerable ----------------------------- --------------------------------- ------ ----- ------ -------- --------- ---- ------- --------- ----------------------- ------    -     -- ------- ---    --------
-}
+// else if (parseInt(version) != 2) {
+//     alert("Not the updated one")
+//     localStorage.setItem("version", JSON.stringify("2"));
+//     localStorage.setItem("lastOfMistakeApp", JSON.stringify(null));
+//     // items = null;  //  very vulnerable ----------------------------- --------------------------------- ------ ----- ------ -------- --------- ---- ------- --------- ----------------------- ------    -     -- ------- ---    --------
+// }
 
 
 
@@ -87,67 +87,72 @@ items.map((numb) => {
 });
 
 
+let result = [];
 
-
-const randerValue = () => {
+const randerValue = (srearch) => {
     // console.log('show data')
     // console.log(items.length, ' items');
     // console.log(items, ' total .........add items');
-    let text = "";
-    let ORDERindexCou = 0;
+    if (result.length === 0) {
+        let text = "";
+        let ORDERindexCou = 0;
 
-    const runItem = () => {
-        ORDERIndx.sort().reverse();
-        console.log(ORDERIndx, '-------------------------------------- ------------------------------- --------------')
-        items.map((num) => {
-            if (ORDERIndx[ORDERindexCou] === num.mistakes) {
-                text += "<div class='item-col'><button class='btn-simple unselect' idSEC='" + num.idSEC + "' onclick='runID(" + num.idSEC + ")'><img src='./aboutbtn.svg' alt=' srcset=' /></button><h3 class='color-text'>" + num.name + "</h3><div class='item-ceter grid'><h3 class='color-text-red mistakeNum'>" + num.mistakes + "</h3><button class='tract-btn unselect item-ceter' ' onclick='increaseMstk(" + num.idSEC + ")'><img src='./TrendUp.svg' alt=' srcset=' /></button></div></div>"
-                ORDERindexCou += 1;
-                console.log(ORDERindexCou, '=')
+        const runItem = () => {
+            ORDERIndx.sort().reverse();
+
+            items.map((num) => {
+                if (ORDERIndx[ORDERindexCou] === num.mistakes) {
+                    text += "<div class='item-col'><button class='btn-simple unselect' idSEC='" + num.idSEC + "' onclick='runID(" + num.idSEC + ")'><img src='./aboutbtn.svg' alt=' srcset=' /></button><h3 class='color-text'>" + num.name + "</h3><div class='item-ceter grid'><h3 class='color-text-red mistakeNum'>" + num.mistakes + "</h3><button class='tract-btn unselect item-ceter' ' onclick='increaseMstk(" + num.idSEC + ")'><img src='./TrendUp.svg' alt=' srcset=' /></button></div></div>"
+                    ORDERindexCou += 1;
+                    // console.log(ORDERindexCou, '=')
+                }
+                else {
+                    return;
+                }
+
+                // else {
+                //     loopOfItems(num);
+
+                // }
+                // console.log(num, 'num length')
+                // text += text + ": " + num.name + "<br>";
+            });
+            document.getElementById("gg").innerHTML = text;
+
+            // runAgain({ ORDERindexCou });
+            if (items.length > ORDERindexCou) {
+                // if (ORDERindexCou === items.length) {
+                //     ORDERindexCou = 0;
+                //     console.log('order final =====', ORDERindexCou);
+                // }
+                // else {
+                // console.log(items.length, 'i', ORDERindexCou, 'o ---------------')
+                runItem();
+                // }
             }
-            else {
-                return;
-            }
-
-            // else {
-            //     loopOfItems(num);
-
-            // }
-            // console.log(num, 'num length')
-            // text += text + ": " + num.name + "<br>";
-        });
-        document.getElementById("gg").innerHTML = text;
-
-        // runAgain({ ORDERindexCou });
-        if (items.length > ORDERindexCou) {
-            // if (ORDERindexCou === items.length) {
-            //     ORDERindexCou = 0;
-            //     console.log('order final =====', ORDERindexCou);
-            // }
-            // else {
-            console.log(items.length, 'i', ORDERindexCou, 'o ---------------')
-            runItem();
-            // }
         }
+        runItem();
+
+        // console.log(items.length, 'i', ORDERindexCou, 'o ------ final---------')
+        ORDERindexCou = 0;
+        // console.log(items.length, 'i', ORDERindexCou, 'o ------ After final---------')
     }
-    runItem();
+    else {
+        const runItem = () => {
+            let text = "";
+            srearch.map((num) => {
+                // if (ORDERIndx[ORDERindexCou] === num.mistakes) {
+                text += "<div class='item-col'><button class='btn-simple unselect' idSEC='" + num.idSEC + "' onclick='runID(" + num.idSEC + ")'><img src='./aboutbtn.svg' alt=' srcset=' /></button><h3 class='color-text'>" + num.name + "</h3><div class='item-ceter grid'><h3 class='color-text-red mistakeNum'>" + num.mistakes + "</h3><button class='tract-btn unselect item-ceter' ' onclick='increaseMstk(" + num.idSEC + ")'><img src='./TrendUp.svg' alt=' srcset=' /></button></div></div>"
+            });
+            document.getElementById("gg").innerHTML = text;
+        }
+        runItem();
 
+        // console.log(items.length, 'i', ORDERindexCou, 'o ------ final---------')
+        ORDERindexCou = 0;
+        // console.log(items.length, 'i', ORDERindexCou, 'o ------ After final---------')
+    }
 
-    // const runAgain = ({ ORDERindexCou }) => {
-    //     if (ORDERindexCou < items.length) {
-    //         console.log(items.length, 'i', ORDERindexCou, 'o ---------------')
-    //         runItem();
-    //     }
-    //     else {
-    //         return;
-    //     }
-    // }
-
-    // runItem();
-
-    console.log(items.length, 'i', ORDERindexCou, 'o ------ final---------')
-    ORDERindexCou = 0;
-    console.log(items.length, 'i', ORDERindexCou, 'o ------ After final---------')
 
 }
 randerValue();
@@ -155,7 +160,7 @@ randerValue();
 
 const runID = (idSEC) => {
     actualIDofRun = idSEC;
-    console.log(items[actualIDofRun].name + "-----------");
+    // console.log(items[actualIDofRun].name + "-----------");
     showHide('modal2');
     document.getElementById('M2miskateNameField').value = items[actualIDofRun].name;
     document.getElementById('M2miskateCountField').value = items[actualIDofRun].mistakes;
@@ -163,7 +168,7 @@ const runID = (idSEC) => {
 
 
 const editFunction = () => {
-    console.log(items[actualIDofRun].name + "--//-----//---//-");
+    // console.log(items[actualIDofRun].name + "--//-----//---//-");
     let newMistakeName = document.getElementById('M2miskateNameField').value;
     let newMistakeCount = document.getElementById('M2miskateCountField').value;
     items[actualIDofRun].name = newMistakeName;
@@ -205,7 +210,7 @@ const deletItem = () => {
 
 const increaseMstk = (idSEC) => {
     const actualID = idSEC;
-    console.log(actualID + " mistake count")
+    // console.log(actualID + " mistake count")
     heightMistakeLimiot = items[actualID].mistakes;
     if (parseInt(heightMistakeLimiot) < 1500) {
         items[actualID].mistakes += 1;
@@ -279,3 +284,24 @@ const addItem = () => {
 const setItemToLocal = () => {
     localStorage.setItem("lastOfMistakeApp", JSON.stringify(items));
 }
+
+
+
+function myFunction() {
+
+    let searchtxtValue = document.getElementById('searchText').value;
+    let searchtxtValueCom = searchtxtValue.toUpperCase();
+    console.log(searchtxtValueCom);
+    result = [];
+    items.map((detail) => {
+        if (detail.name.toUpperCase().includes(`${searchtxtValueCom}`)) {
+            console.log(detail.name, 'hui');
+            result.push(detail);
+        }
+    });
+    text = '';
+    randerValue(result);
+
+    console.log(result, 'rrrrrrr');
+}
+
