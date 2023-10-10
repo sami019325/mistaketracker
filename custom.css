@@ -55,6 +55,14 @@
     gap: 10px;
 }
 
+.notifyUpdate {
+    background-color: bisque;
+    top: 20vh;
+    bottom: 20vh;
+    width: 90%;
+    z-index: 100;
+}
+
 #modal1 {
     display: none;
 }
