@@ -103,7 +103,7 @@ items.map((numb) => {
     mistakeCOUNTS.push(numbData);
     ORDERIndx = mistakeCOUNTS;
 });
-
+ORDERIndx.sort().reverse();
 
 let result = [];
 
@@ -116,7 +116,7 @@ const randerValue = (srearch) => {
         let ORDERindexCou = 0;
 
         const runItem = () => {
-            ORDERIndx.sort().reverse();
+            
 
             items.map((num) => {
                 if (ORDERIndx[ORDERindexCou] === num.mistakes) {
